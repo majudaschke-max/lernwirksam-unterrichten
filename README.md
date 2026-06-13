@@ -14,7 +14,7 @@ Sie ist als kompakte Arbeits- und Reflexionshilfe gedacht, nicht als automatisch
 
 1. Im Bereich **Studien ansehen** passende Themenfelder oder Filter auswählen.
 2. Relevante Studienhinweise bei Bedarf für den Planungscheck markieren.
-3. Im Bereich **Unterrichtsidee prüfen** Fach, Format, Lernziel, Tool, Unterrichtsidee und optional **Lerngruppe / Kontext** eintragen.
+3. Im Bereich **Planungscheck** Fach, Format, Lernziel, Tool, Unterrichtsidee und optional **Lerngruppe / Kontext** eintragen.
 4. Die formatabhängige Checkliste bearbeiten.
 5. Einen Reflexionscheck erstellen, kopieren oder als Markdown-Datei herunterladen.
 6. Bei Bedarf die Quellenbasis öffnen und einzelne Studien oder Berichte nachlesen.
@@ -24,7 +24,7 @@ Sie ist als kompakte Arbeits- und Reflexionshilfe gedacht, nicht als automatisch
 - Die App eignet sich für Unterrichtsplanung, Fachschaftsarbeit, Fortbildungen und die Reflexion digitaler Lernsettings sowie analoger Alternativen.
 - Lehrkräfte können im Planungscheck optional die Lerngruppe bzw. den Kontext angeben, zum Beispiel Schulart, Jahrgangsstufe, Fachniveau, digitale Routine oder besondere Rahmenbedingungen. Dieser Kontext dient nicht als Forschungsfilter, sondern hilft, den Check und den Weiterarbeits-Prompt praxisnäher auf die konkrete Lerngruppe zuzuschneiden.
 - Die enthaltenen Studienhinweise sind eine Auswahl und ersetzen keine vollständige Literaturrecherche.
-- Die Ampel im Planungsbereich ist eine heuristische Hilfe. Sie ersetzt keine fachliche und didaktische Prüfung.
+- Die Ampel im Planungscheck ist eine heuristische Hilfe. Sie ersetzt keine fachliche und didaktische Prüfung.
 - KI-generierte Prompts oder Checks sollten immer fachlich überprüft und an die konkrete Lerngruppe angepasst werden.
 - Die App speichert markierte Studienhinweise nur lokal im Browser. Es werden keine Eingaben an einen Server übertragen.
 

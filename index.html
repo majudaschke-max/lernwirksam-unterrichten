@@ -308,15 +308,15 @@
         <div class="chips" id="chips"></div>
         <button class="btn ghost" style="width:100%;" onclick="resetFilters()">Eingrenzung zurücksetzen</button>
         <div class="note"><strong>Merksatz:</strong><br />Digitale Unterrichtsentscheidungen sollten nicht vom Tool ausgehen, sondern von der Lernhandlung: Was sollen Schülerinnen und Schüler besser verstehen, abrufen, erklären, prüfen, überarbeiten, reflektieren oder anwenden können?</div>
-        <div class="note"><strong>Planungsfunktion:</strong><br />Die Ampel im Planungsbereich ist eine heuristische Reflexionshilfe. Sie ersetzt keine fachliche Prüfung, macht aber fehlende Planungsbausteine sichtbar. Der Hauptzweck bleibt die Informationstabelle.</div>
-        <div class="note"><strong>Nutzung:</strong><br />Wählen Sie zuerst einen Weg: Studien ansehen, eine Unterrichtsidee prüfen oder Quellen öffnen. Einzelne Studienhinweise können für den Planungscheck markiert werden.</div>
+        <div class="note"><strong>Planungsfunktion:</strong><br />Die Ampel im Planungscheck ist eine heuristische Reflexionshilfe. Sie ersetzt keine fachliche Prüfung, macht aber fehlende Planungsbausteine sichtbar. Der Hauptzweck bleibt die Informationstabelle.</div>
+        <div class="note"><strong>Nutzung:</strong><br />Wählen Sie zuerst einen Weg: Studien ansehen, Planungscheck öffnen oder Quellen öffnen. Einzelne Studienhinweise können für den Planungscheck markiert werden.</div>
         <div class="note"><strong>Umfang:</strong><br />Die App bildet nicht alle Studien, Tools, Methoden oder Modelle zu lernwirksamem Unterricht ab. Sie enthält eine ausgewählte, didaktisch gebündelte Quellenbasis zur Orientierung.</div>
         <div class="note"><strong>Datenschutz / Speicherung:</strong><br />Markierte Studienhinweise werden nur lokal in diesem Browser gespeichert. Es werden keine Eingaben übertragen. Beim Browserwechsel, Löschen der Browserdaten oder anderem Gerät kann die Auswahl verloren gehen.</div>
       </aside>
       <main class="main">
         <nav class="tabs panel" aria-label="Bereiche" role="tablist">
           <button class="tab active" id="tab-findings" role="tab" aria-selected="true" onclick="showTab('findings')">Studien ansehen</button>
-          <button class="tab" id="tab-planner" role="tab" aria-selected="false" onclick="showTab('planner')">Unterrichtsidee prüfen</button>
+          <button class="tab" id="tab-planner" role="tab" aria-selected="false" onclick="showTab('planner')">Planungscheck</button>
           <button class="tab" id="tab-sources" role="tab" aria-selected="false" onclick="showTab('sources')">Quellenbasis</button>
         </nav>
 
@@ -328,7 +328,7 @@
           <div id="content"></div>
         </section>
         <section id="planner-section" class="planner panel" style="display:none;">
-          <h2>Studien auf Unterrichtsidee anwenden</h2>
+          <h2>Planungscheck: Unterrichtsidee prüfen</h2>
           <p>Dieser Bereich erstellt keine fertige Stunde. Er nutzt formatabhängige Checklisten und eine einfache Reflexionsampel, um zentrale Planungsaspekte sichtbar zu machen. Das optionale Feld „Lerngruppe / Kontext“ hilft bei der praxisnahen Einordnung, ist aber kein Forschungsfilter.</p>
           <div class="form-grid">
             <div class="field"><label for="subject">Fach / Klasse <span class="small">(optional)</span></label><input id="subject" placeholder="z. B. Englisch 8, BwR 8, WR 9" /></div>
@@ -366,16 +366,16 @@
       <div class="intro-details" id="introDetails">
         <p><strong>So ist die App gedacht:</strong> Sie starten entweder bei den Studien oder mit einer eigenen Unterrichtsidee. Die App ersetzt keine Unterrichtsplanung, sondern macht sichtbar, welche Forschungshinweise zu Ihrer Idee passen und welche Planungsbausteine noch geschärft werden sollten.</p>
         <p>Hilfreich ist die Reihenfolge: erst Lernziel und Lernhandlung klären, dann ein digitales Format auswählen. Die Studienhinweise sind deshalb keine Tool-Empfehlungen, sondern didaktische Prüffragen: Wird etwas erklärt, geübt, abgerufen, überarbeitet, reflektiert oder als Lernprozess sichtbar?</p>
-        <p>Wenn Sie nur schnell starten wollen, öffnen Sie „Studien ansehen“. Wenn Sie bereits eine konkrete Idee haben, wechseln Sie zu „Unterrichtsidee prüfen“. Dort kann optional auch „Lerngruppe / Kontext“ ergänzt werden, zum Beispiel Schulart, Jahrgangsstufe, digitale Routine oder besondere Rahmenbedingungen. Das ist kein Forschungsfilter, sondern hilft, Check und Prompt praxisnäher zuzuschneiden.</p>
+        <p>Wenn Sie nur schnell starten wollen, öffnen Sie „Studien ansehen“. Wenn Sie bereits eine konkrete Idee haben, wechseln Sie zum „Planungscheck“. Dort kann optional auch „Lerngruppe / Kontext“ ergänzt werden, zum Beispiel Schulart, Jahrgangsstufe, digitale Routine oder besondere Rahmenbedingungen. Das ist kein Forschungsfilter, sondern hilft, Check und Prompt praxisnäher zuzuschneiden.</p>
       </div>
       <div class="intro-steps" id="introSteps">
         <div class="intro-step"><strong>1. Studien ansehen</strong><span>Nutzen Sie die Themenfelder und Filter, um passende Forschungshinweise zu finden. Es geht um Lernhandlungen, nicht um möglichst viele digitale Werkzeuge.</span></div>
-        <div class="intro-step"><strong>2. Unterrichtsidee prüfen</strong><span>Wenn Sie eine konkrete Idee haben, wechseln Sie zum Planungscheck, ergänzen bei Bedarf Lerngruppe und Kontext, wählen das Format aus und bearbeiten die Prüfpunkte.</span></div>
+        <div class="intro-step"><strong>2. Planungscheck</strong><span>Wenn Sie eine konkrete Unterrichtsidee haben, wechseln Sie zum Planungscheck, ergänzen bei Bedarf Lerngruppe und Kontext, wählen das Format aus und bearbeiten die Prüfpunkte.</span></div>
         <div class="intro-step"><strong>3. Ergebnis nutzen</strong><span>Der Check zeigt offene Punkte, passende Studienhinweise und nächste Schritte. Die Ampel ist eine Reflexionshilfe, keine automatische Bewertung.</span></div>
       </div>
       <div class="intro-examples" id="introExamples">
         <h3>Konkrete Beispiele</h3>
-        <div class="intro-example"><strong>Beispiel 1: Eine H5P-Übung verbessern</strong><span>Wählen Sie im Filter „Tool- / Formatbezug“ den Eintrag „H5P“. Markieren Sie passende Studienhinweise. Wechseln Sie zu „Unterrichtsidee prüfen“, wählen Sie „H5P / interaktive Übung“ und prüfen Sie besonders: Abruf, spezifisches Feedback, zweiter Versuch und Anschlussaufgabe.</span></div>
+        <div class="intro-example"><strong>Beispiel 1: Eine H5P-Übung verbessern</strong><span>Wählen Sie im Filter „Tool- / Formatbezug“ den Eintrag „H5P“. Markieren Sie passende Studienhinweise. Wechseln Sie zum Planungscheck, wählen Sie „H5P / interaktive Übung“ und prüfen Sie besonders: Abruf, spezifisches Feedback, zweiter Versuch und Anschlussaufgabe.</span></div>
         <div class="intro-example"><strong>Beispiel 2: Eine KI-Aufgabe absichern</strong><span>Wählen Sie „KI“ als Toolbezug oder öffnen Sie das Themenfeld „KI im Unterricht“. Markieren Sie passende Studienhinweise. Im Planungscheck wählen Sie „KI-Aufgabe“ und prüfen: eigene Vorarbeit, begrenzte Rolle der KI, kritische Prüfung, begründete Überarbeitung und sichtbare Eigenleistung.</span></div>
         <div class="intro-example"><strong>Beispiel 3: Eine Lernplattform-Sequenz strukturieren</strong><span>Öffnen Sie das Themenfeld „Lernplattformen, Struktur und Selbststeuerung“. Prüfen Sie anschließend im Format „Sequenz / Lernpfad“, ob Ziel, Etappen, Hilfen, Feedback, Fortschritt und Reflexion wirklich sichtbar sind.</span></div>
       </div>
@@ -383,7 +383,7 @@
         <button class="btn" id="introExplainBtn" onclick="showIntroSteps()">Hilfe anzeigen</button>
         <button class="btn ghost" onclick="closeIntro(true)">Direkt starten</button>
         <button class="btn ghost" id="introFindingsBtn" style="display:none" onclick="closeIntro(true);showTab('findings')">Zu den Studien</button>
-        <button class="btn ghost" id="introPlannerBtn" style="display:none" onclick="closeIntro(true);showTab('planner')">Unterrichtsidee prüfen</button>
+        <button class="btn ghost" id="introPlannerBtn" style="display:none" onclick="closeIntro(true);showTab('planner')">Zum Planungscheck</button>
       </div>
     </div>
   </div>
@@ -551,7 +551,7 @@ function resetFilters(){
   document.getElementById("view").value="table";
   render();
 }
-function selectionButton(item){const isSaved=selected.has(item.id);return `<button class="mini-btn ${isSaved?"saved":""}" onclick="toggleSelected(${item.id})">${isSaved?"✓ für Check markiert":"für Planungscheck markieren"}</button>`}
+function selectionButton(item){const isSaved=selected.has(item.id);return `<button class="mini-btn ${isSaved?"saved":""}" onclick="toggleSelected(${item.id})">${isSaved?"✓ für Planungscheck markiert":"für Planungscheck markieren"}</button>`}
 function rowHtml(item){return `<tr id="befund-${item.id}"><td><div class="num">${item.id}</div>${selectionButton(item)}</td><td><div class="finding">${esc(item.finding)}</div><div class="small">${esc(item.group)}</div>${tagHtml(item)}</td><td>${esc(item.study)}</td><td><div class="boundary">${esc(item.boundary)}</div></td><td>${esc(item.teaching)}</td><td><div class="implementation">${esc(item.implementation)}</div></td><td>${sourceHtml(item.sources)}</td></tr>`}
 function tableForGroup(group,groupItems,index){return `<h2 class="group-title"><span class="group-index">${index+1}</span>${esc(group)}</h2><div class="table-wrap"><table><thead><tr><th>Nr.</th><th>Evidenzbasierte Kernaussage</th><th>Studienergebnis in Kurzform</th><th>Einordnung / Grenze</th><th>Bedeutung für guten Unterricht</th><th>Konkrete Umsetzung</th><th>Quellen</th></tr></thead><tbody>${groupItems.map(rowHtml).join("")}</tbody></table></div>`}
 function cardHtml(item){return `<article class="card" id="befund-${item.id}"><div class="card-head"><div class="num">${item.id}</div><div><h3>${esc(item.finding)}</h3><div class="small">${esc(item.group)}</div>${tagHtml(item)}${selectionButton(item)}</div></div><div class="grid2"><div class="box"><h4>Studienergebnis in Kurzform</h4><p>${esc(item.study)}</p></div><div class="box limit"><h4>Einordnung / Grenze</h4><p>${esc(item.boundary)}</p></div><div class="box"><h4>Bedeutung für guten Unterricht</h4><p>${esc(item.teaching)}</p></div><div class="box impact"><h4>Konkrete Umsetzung</h4><p>${esc(item.implementation)}</p></div></div><div class="box" style="margin-top:12px;"><h4>Quellen</h4>${sourceHtml(item.sources)}</div></article>`}
