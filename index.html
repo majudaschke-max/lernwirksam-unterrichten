@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lernwirksam unterrichten mit digitalen Medien</title>
-  <meta name="description" content="Forschungsbasierte Orientierungstabelle und Planungscheck für lernwirksame Unterrichtsplanung mit digitalen Medien, KI, H5P, Lernplattform, Feedback, Leistungsnachweisen und analogen Alternativen." />
+  <title>Lernwirksam unterrichten</title>
+  <meta name="description" content="Forschungsbasierte Orientierungstabelle und Planungscheck für lernwirksame Unterrichtsplanung, digitale Lernsettings, KI, H5P, Lernplattform, Feedback, Leistungsnachweise und analoge Alternativen." />
   <meta name="author" content="MJ" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#7a6d8f" />
-  <meta property="og:title" content="Lernwirksam unterrichten mit digitalen Medien" />
+  <meta property="og:title" content="Lernwirksam unterrichten" />
   <meta property="og:description" content="Eine kompakte App für Lehrkräfte zur evidenzinformierten Planung und Reflexion digitaler und analoger Unterrichtsentscheidungen." />
   <meta property="og:type" content="website" />
   <link rel="icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="10" fill="%23f1edf7"/%3E%3Cpath d="M14 46V18h7l11 17 11-17h7v28h-7V30L34 44h-4l-9-14v16h-7z" fill="%235d536e"/%3E%3C/svg%3E' />
@@ -299,7 +299,7 @@
     <header class="hero">
       <div class="brand-signature" aria-label="MJ">MJ</div>
       <div class="eyebrow">Forschungshinweise für Unterrichtsentscheidungen</div>
-      <h1>Lernwirksam unterrichten mit digitalen Medien</h1>
+      <h1>Lernwirksam unterrichten</h1>
       <p>Diese App bündelt zentrale Studien und Forschungsübersichten zu Unterrichtsqualität, digitalen Medien, Tabletklassen, Lernplattformen, H5P, Feedback, KI und alternativen Leistungsnachweisen. Im Mittelpunkt steht: Was zeigen Forschungsergebnisse und was folgt daraus konkret für guten Unterricht, digital wie analog?</p>
       <p class="hero-brief"><strong>Anleitung:</strong> Erst passende Studienhinweise ansehen, dann bei Bedarf markieren und anschließend eine eigene Unterrichtsidee prüfen. Der Button „Anleitung“ öffnet eine kurze Einführung mit ausführlicher Erklärung und Beispielen.</p>
       <div class="hero-actions">
@@ -869,7 +869,7 @@ async function copyCheck(){const text=lastCheckText||document.getElementById("ch
 function downloadMarkdown(){
   const text=lastCheckText||document.getElementById("checkOutputWrap").textContent||"";
   if(!text.trim()){toast("Noch kein Check vorhanden.");return;}
-  const md=`# Reflexionscheck: lernwirksam unterrichten mit digitalen Medien\n\n${text}`;
+  const md=`# Reflexionscheck: lernwirksam unterrichten\n\n${text}`;
   const blob=new Blob([md],{type:"text/markdown;charset=utf-8"});
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");

@@ -1,6 +1,6 @@
-# Lernwirksam unterrichten mit digitalen Medien
+# Lernwirksam unterrichten
 
-Diese App ist eine forschungsbasierte Orientierungshilfe für lernwirksame Unterrichtsplanung mit digitalen Medien. Sie bündelt zentrale Studien, Forschungsergebnisse und praxisnahe Studienhinweise zu Unterrichtsqualität, digitalen Medien, Lernplattformen, H5P, Feedback, KI, Gamification und alternativen Leistungsnachweisen.
+Diese App ist eine forschungsbasierte Orientierungshilfe für lernwirksame Unterrichtsplanung. Sie bündelt zentrale Studien, Forschungsergebnisse und praxisnahe Studienhinweise zu Unterrichtsqualität, digitalen Medien, Lernplattformen, H5P, Feedback, KI, Gamification, alternativen Leistungsnachweisen und analogen Unterrichtsentscheidungen.
 
 Die Auswahl ist bewusst begrenzt. Die App bildet nicht sämtliche Studien, Tools, Methoden oder Modelle zu lernwirksamem Unterricht ab, sondern bietet eine ausgewählte, didaktisch gebündelte Quellenbasis zur Orientierung.
 
