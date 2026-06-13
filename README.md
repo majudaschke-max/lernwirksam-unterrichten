@@ -1,6 +1,6 @@
 # Lernwirksamer digitaler Unterricht
 
-Diese App ist eine forschungsbasierte Orientierungshilfe für lernwirksamen digitalen Unterricht. Sie bündelt zentrale Befunde zu Unterrichtsqualität, digitalen Medien, Lernplattformen, H5P, Feedback, KI, Gamification und alternativen Leistungsnachweisen.
+Diese App ist eine forschungsbasierte Orientierungshilfe für lernwirksamen digitalen Unterricht. Sie bündelt zentrale Studien, Forschungsergebnisse und praxisnahe Studienhinweise zu Unterrichtsqualität, digitalen Medien, Lernplattformen, H5P, Feedback, KI, Gamification und alternativen Leistungsnachweisen.
 
 ## Ziel der App
 
@@ -10,8 +10,8 @@ Sie ist als kompakte Arbeits- und Reflexionshilfe gedacht, nicht als automatisch
 
 ## Kurze Anleitung
 
-1. Im Bereich **Befunde ansehen** passende Themenfelder oder Filter auswählen.
-2. Relevante Befunde bei Bedarf für den Planungscheck markieren.
+1. Im Bereich **Studien ansehen** passende Themenfelder oder Filter auswählen.
+2. Relevante Studienhinweise bei Bedarf für den Planungscheck markieren.
 3. Im Bereich **Unterrichtsidee prüfen** Fach, Format, Lernziel, Tool und Unterrichtsidee eintragen.
 4. Die formatabhängige Checkliste bearbeiten.
 5. Einen Reflexionscheck erstellen, kopieren oder als Markdown-Datei herunterladen.
@@ -22,7 +22,7 @@ Sie ist als kompakte Arbeits- und Reflexionshilfe gedacht, nicht als automatisch
 - Die App eignet sich für Unterrichtsplanung, Fachschaftsarbeit, Fortbildungen und die Reflexion digitaler Lernsettings.
 - Die Ampel im Planungsbereich ist eine heuristische Hilfe. Sie ersetzt keine fachliche und didaktische Prüfung.
 - KI-generierte Prompts oder Checks sollten immer fachlich überprüft und an die konkrete Lerngruppe angepasst werden.
-- Die App speichert markierte Befunde nur lokal im Browser. Es werden keine Eingaben an einen Server übertragen.
+- Die App speichert markierte Studienhinweise nur lokal im Browser. Es werden keine Eingaben an einen Server übertragen.
 
 ## Technische Nutzung
 
