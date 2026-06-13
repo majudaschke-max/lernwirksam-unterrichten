@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lernwirksam unterrichten</title>
+  <title>Lernwirksam unterrichten · v26</title>
   <meta name="description" content="Forschungsbasierte Orientierungstabelle und Planungscheck für lernwirksame Unterrichtsplanung, digitale Lernsettings, KI, H5P, Lernplattform, Feedback, Leistungsnachweise und analoge Alternativen." />
   <meta name="author" content="MJ" />
   <meta name="robots" content="index,follow" />
@@ -252,17 +252,6 @@
     .legend-item{border-top:2px solid var(--line);padding:9px 0;color:var(--muted);font-size:.9rem}
     .legend-item strong{display:block;color:var(--text);margin-bottom:3px}
     .data-note{margin-top:10px;font-size:.88rem;color:var(--muted)}
-    .manual-panel{display:none;padding:16px;margin-bottom:14px;border-left:4px solid var(--primary)}
-    .manual-panel.show{display:block}
-    .manual-panel h2{margin:0 0 10px}
-    .manual-panel h3{margin:14px 0 5px;font-size:1rem}
-    .manual-panel p{margin:0 0 8px;color:var(--muted)}
-    .manual-panel .manual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
-    .manual-panel .manual-box{border-top:2px solid var(--line);background:transparent;border-radius:0;padding:12px 0}
-    .quick-start{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
-    .quick-card{border:1px solid var(--line);border-radius:7px;background:#fffbf4;padding:12px}
-    .quick-card strong{display:block;margin-bottom:4px;color:var(--text)}
-    .quick-card span{display:block;color:var(--muted);font-size:.9rem}
     body.modal-open{overflow:hidden}
     .intro-overlay{position:fixed;inset:0;background:rgba(36,36,36,.38);z-index:80;display:none;align-items:center;justify-content:center;padding:18px}
     .intro-overlay.show{display:flex}
@@ -290,7 +279,7 @@
     @keyframes flash{0%{background:#fff0bd}100%{background:var(--surface)}}
     .chip:focus-visible,.tab:focus-visible,.mini-btn:focus-visible,.select:focus-visible,.field input:focus-visible,.field textarea:focus-visible,.field select:focus-visible,.searchbox input:focus-visible{outline:none;box-shadow:var(--focus);border-color:var(--primary)}
     @media(max-width:1180px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0}.chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:840px){.shell{padding:12px}.hero{padding:18px}.brand-signature{position:static;display:inline-block;margin-bottom:12px;padding-left:0;border-left:0}.grid2,.form-grid,.sources-grid,.legend-grid,.manual-panel .manual-grid,.quick-start{grid-template-columns:1fr}.chips{grid-template-columns:1fr}.toolbar{align-items:flex-start}.table-wrap{overflow-x:auto}table{min-width:1460px}}
+    @media(max-width:840px){.shell{padding:12px}.hero{padding:18px}.brand-signature{position:static;display:inline-block;margin-bottom:12px;padding-left:0;border-left:0}.grid2,.form-grid,.sources-grid,.legend-grid{grid-template-columns:1fr}.chips{grid-template-columns:1fr}.toolbar{align-items:flex-start}.table-wrap{overflow-x:auto}table{min-width:1460px}}
     @media print{body{background:#fff}.hero,.sidebar,.tabs,.toolbar,.planner,.toast,.mini-btn{display:none!important}.shell{max-width:none;padding:0}.layout{display:block}.table-wrap,.card,.source-card{box-shadow:none;break-inside:avoid}a{color:#000;text-decoration:none}}
   </style>
 </head>
@@ -301,10 +290,9 @@
       <div class="eyebrow">Forschungshinweise für Unterrichtsentscheidungen</div>
       <h1>Lernwirksam unterrichten</h1>
       <p>Diese App bündelt zentrale Studien und Forschungsübersichten zu Unterrichtsqualität, digitalen Medien, Tabletklassen, Lernplattformen, H5P, Feedback, KI und alternativen Leistungsnachweisen. Im Mittelpunkt steht: Was zeigen Forschungsergebnisse und was folgt daraus konkret für guten Unterricht, digital wie analog?</p>
-      <p class="hero-brief"><strong>Anleitung:</strong> Erst passende Studienhinweise ansehen, dann bei Bedarf markieren und anschließend eine eigene Unterrichtsidee prüfen. Der Button „Anleitung“ öffnet eine kurze Einführung mit ausführlicher Erklärung und Beispielen.</p>
+      <p class="hero-brief"><strong>Hilfe:</strong> Beim ersten Besuch erscheint eine kurze Orientierung. Der Button „Ausführliche Anleitung“ öffnet bei Bedarf die Erklärung mit konkreten Beispielen.</p>
       <div class="hero-actions">
-        <button class="btn secondary" onclick="openIntro(true)">Anleitung</button>
-        <button class="btn secondary" onclick="toggleManual()">Gebrauchsanweisung</button>
+        <button class="btn secondary" onclick="openIntro(true)">Ausführliche Anleitung</button>
         <button class="btn secondary" onclick="window.print()">Drucken / PDF</button>
       </div>
     </header>
@@ -332,50 +320,6 @@
           <button class="tab" id="tab-sources" role="tab" aria-selected="false" onclick="showTab('sources')">Quellenbasis</button>
         </nav>
 
-        <section id="manual-section" class="manual-panel panel">
-          <h2>Kurze Gebrauchsanweisung</h2>
-          <p>Sie müssen die App nicht von oben nach unten durcharbeiten. Wählen Sie zuerst, was Sie gerade brauchen: eine schnelle Orientierung, die Prüfung einer konkreten Unterrichtsidee oder den Blick in die Quellen.</p>
-          <div class="quick-start" aria-label="Drei typische Nutzungswege">
-            <div class="quick-card"><strong>Orientieren</strong><span>Bleiben Sie auf „Studien ansehen“, wählen Sie links ein Themenfeld oder einen Filter und lesen Sie die passenden Studienhinweise.</span></div>
-            <div class="quick-card"><strong>Planen</strong><span>Markieren Sie passende Studienhinweise und wechseln Sie zu „Unterrichtsidee prüfen“, um daraus einen Reflexionscheck zu erstellen.</span></div>
-            <div class="quick-card"><strong>Belegen</strong><span>Öffnen Sie „Quellenbasis“, wenn Sie Studien, Modelle oder Berichte nachschlagen möchten.</span></div>
-          </div>
-          <p>Im Mittelpunkt stehen nicht einzelne Tools, sondern die Lernhandlung: Was sollen Schülerinnen und Schüler besser verstehen, abrufen, erklären, prüfen, überarbeiten, reflektieren oder anwenden können?</p>
-          <div class="manual-grid">
-            <div class="manual-box">
-              <h3>1. Studien ansehen</h3>
-              <p>Im Bereich <strong>„Studien ansehen“</strong> finden Sie zentrale Forschungsergebnisse zu digitalem Unterricht, Lernplattformen, H5P, Feedback, KI, Gamification, Selbststeuerung und alternativen Leistungsnachweisen. Jeder Studienhinweis enthält eine kurze Einordnung, konkrete Konsequenzen für Unterricht und Quellenangaben.</p>
-              <p>Die Studienhinweise können über die Eingrenzungen <strong>„Modell / Bezugsrahmen“</strong>, <strong>„Unterrichtsfunktion“</strong>, <strong>„Tool- / Formatbezug“</strong> und <strong>„Evidenz / Belastbarkeit“</strong> gefiltert werden. Zusätzlich können Sie über die Themenfelder links schnell zu bestimmten Bereichen wechseln. Die frühere Freitextsuche ist bewusst entfernt.</p>
-              <p>Einzelne Studienhinweise können über <strong>„für Planungscheck markieren“</strong> ausgewählt werden. Wurden Studienhinweise markiert, können sie über <strong>„Auswahl im Planungscheck nutzen“</strong> in den Planungscheck übernommen werden. Alternativ stehen <strong>„Alle markieren“</strong> und <strong>„Auswahl leeren“</strong> zur Verfügung, um die Auswahl schnell anzupassen.</p>
-            </div>
-            <div class="manual-box">
-              <h3>2. Planungs-Prompt zu angezeigten Studienhinweisen nutzen</h3>
-              <p>Über <strong>„Prompt zu angezeigten Studienhinweisen kopieren“</strong> wird ein gemeinsamer KI-Arbeitsauftrag zu den aktuell sichtbaren Einträgen erstellt. Das ist besonders sinnvoll, wenn die Studienhinweise vorher über Modell, Unterrichtsfunktion, Tool-/Formatbezug, Evidenz/Belastbarkeit oder Themenfeld eingegrenzt wurden.</p>
-              <p>Der Prompt enthält die ausgewählten Studienhinweise mit Einordnung, didaktischer Konsequenz, Umsetzungshinweisen und Quellenankern. Ergänzen Sie anschließend Fach, Klasse, Thema, Lernziel und Rahmenbedingungen. So kann aus mehreren passenden Forschungsergebnissen eine konkrete Unterrichtsidee für die eigene Lerngruppe entwickelt werden.</p>
-            </div>
-            <div class="manual-box">
-              <h3>3. Unterrichtsidee prüfen</h3>
-              <p>Im Bereich <strong>„Unterrichtsidee prüfen“</strong> können Sie eine eigene Unterrichtsidee, digitale Aufgabe, Tabletphase, KI-Aufgabe, gamifizierter Lernpfad oder ein Projekt kurz eingeben, damit diese anhand der Kriterien des Planungschecks reflektiert und eingeschätzt werden kann.</p>
-              <p>Wählen Sie dazu das passende Format aus und bearbeiten Sie die Checkliste. Die App zeigt über eine <strong>Reflexionsampel</strong>, ob zentrale Planungsbausteine bereits sichtbar sind oder ob wichtige Punkte noch fehlen.</p>
-              <p>Über <strong>„Check erstellen“</strong> erhalten Sie einen kompakten Reflexionscheck. Über <strong>„Check mit passenden Studienhinweisen erstellen“</strong> werden fehlende Punkte zusätzlich mit passenden Forschungsergebnissen aus der Tabelle verknüpft. So erhalten Sie konkrete Hinweise, wie die Unterrichtsidee didaktisch geschärft werden kann.</p>
-            </div>
-            <div class="manual-box">
-              <h3>4. Check weiterverwenden</h3>
-              <p>Der erzeugte Check eignet sich z. B. für die eigene Unterrichtsplanung, die Besprechung im Team oder als Reflexionsgrundlage in Fortbildungen. Er kann über <strong>„Check kopieren“</strong> in andere Dokumente übernommen oder über <strong>„Check als Markdown laden“</strong> heruntergeladen werden.</p>
-              <p>Über <strong>„Prompt aus Check kopieren“</strong> kann zusätzlich ein KI-Arbeitsauftrag erzeugt werden, der die eingegebene Unterrichtsidee, offene Prüfpunkte, markierte Studienhinweise und passende Forschungsergebnisse zur Nachschärfung zusammenführt. Dieser Prompt ist besonders sinnvoll, wenn aus dem Reflexionscheck eine konkretere Unterrichtsplanung entstehen soll.</p>
-            </div>
-            <div class="manual-box">
-              <h3>5. Quellenbasis</h3>
-              <p>Im Bereich <strong>„Quellenbasis“</strong> finden Sie die verwendeten Studien, Reviews, Modelle und Berichte mit kurzer Einordnung und Link.</p>
-              <p>Die Quellenangaben dienen der Orientierung. Die Angabe „stark/moderat/vorsichtig“ meint hier die Belastbarkeit der didaktischen Ableitung, nicht eine numerische Effektstärke.</p>
-            </div>
-            <div class="manual-box" style="grid-column:1/-1;">
-              <h3>Hinweis zur Speicherung</h3>
-              <p>Markierte Studienhinweise werden nur lokal im jeweiligen Browser gespeichert. Es werden keine Eingaben übertragen. Beim Löschen der Browserdaten, Browserwechsel oder Gerätewechsel kann die Auswahl verloren gehen.</p>
-              <p>Die kopierten Prompts sind bewusst als Arbeitsaufträge formuliert. Prüfen Sie KI-Ausgaben fachlich und didaktisch, bevor Sie sie im Unterricht einsetzen.</p>
-            </div>
-          </div>
-        </section>
         <section id="findings-section">
           <div class="toolbar panel">
             <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;"><span class="badge" id="count">0 Einträge</span><select class="select" id="view" onchange="render()"><option value="table">Tabellenansicht</option><option value="cards">Kartenansicht</option></select></div>
@@ -385,12 +329,13 @@
         </section>
         <section id="planner-section" class="planner panel" style="display:none;">
           <h2>Studien auf Unterrichtsidee anwenden</h2>
-          <p>Dieser Bereich erstellt keine fertige Stunde. Er nutzt formatabhängige Checklisten und eine einfache Reflexionsampel, um zentrale Planungsaspekte sichtbar zu machen. Passende Studienhinweise und Quellen können optional in den Check aufgenommen werden.</p>
+          <p>Dieser Bereich erstellt keine fertige Stunde. Er nutzt formatabhängige Checklisten und eine einfache Reflexionsampel, um zentrale Planungsaspekte sichtbar zu machen. Das optionale Feld „Lerngruppe / Kontext“ hilft bei der praxisnahen Einordnung, ist aber kein Forschungsfilter.</p>
           <div class="form-grid">
             <div class="field"><label for="subject">Fach / Klasse <span class="small">(optional)</span></label><input id="subject" placeholder="z. B. Englisch 8, BwR 8, WR 9" /></div>
             <div class="field"><label for="format">Format / Umfang</label><select id="format" onchange="renderChecklist()"></select></div>
             <div class="field"><label for="goal">Lernziel, falls schon klar <span class="small">(optional)</span></label><input id="goal" placeholder="Was sollen Schülerinnen und Schüler besser können, verstehen oder anwenden?" /></div>
             <div class="field"><label for="tool">Tool / Medium <span class="small">(optional)</span></label><input id="tool" placeholder="z. B. Lernplattform, H5P, KI-Chat, iPad, kollaboratives Dokument" /></div>
+            <div class="field" style="grid-column:1/-1;"><label for="learnerContext">Lerngruppe / Kontext <span class="small">(optional)</span></label><input id="learnerContext" placeholder="z. B. Realschule Bayern, Klasse 8, A2+, Tabletklasse, heterogene Lerngruppe, wenig Erfahrung mit selbstständigem Arbeiten" /></div>
             <div class="field" style="grid-column:1/-1;"><label for="idea">Unterrichtsidee / Aufgabe kurz beschreiben</label><textarea id="idea" placeholder="Was sollen die Schülerinnen und Schüler konkret tun?"></textarea></div>
           </div>
           <div class="checklist" id="dynamicChecklist"></div>
@@ -416,16 +361,16 @@
   </div>
   <div class="intro-overlay" id="introOverlay" role="dialog" aria-modal="true" aria-labelledby="introTitle" aria-describedby="introText">
     <div class="intro-dialog">
-      <h2 id="introTitle">Anleitung nötig?</h2>
+      <h2 id="introTitle">Kurz Hilfe benötigt?</h2>
       <p id="introText">Diese App ist kein Tool-Katalog und kein automatischer Unterrichtsbewerter. Sie hilft dabei, digitale Unterrichtsideen anhand von Studien und Forschungsergebnissen zu planen und zu prüfen.</p>
       <div class="intro-details" id="introDetails">
         <p><strong>So ist die App gedacht:</strong> Sie starten entweder bei den Studien oder mit einer eigenen Unterrichtsidee. Die App ersetzt keine Unterrichtsplanung, sondern macht sichtbar, welche Forschungshinweise zu Ihrer Idee passen und welche Planungsbausteine noch geschärft werden sollten.</p>
         <p>Hilfreich ist die Reihenfolge: erst Lernziel und Lernhandlung klären, dann ein digitales Format auswählen. Die Studienhinweise sind deshalb keine Tool-Empfehlungen, sondern didaktische Prüffragen: Wird etwas erklärt, geübt, abgerufen, überarbeitet, reflektiert oder als Lernprozess sichtbar?</p>
-        <p>Wenn Sie nur schnell starten wollen, öffnen Sie „Studien ansehen“. Wenn Sie bereits eine konkrete Idee haben, wechseln Sie zu „Unterrichtsidee prüfen“. Markierte Studienhinweise können in den Check übernommen werden.</p>
+        <p>Wenn Sie nur schnell starten wollen, öffnen Sie „Studien ansehen“. Wenn Sie bereits eine konkrete Idee haben, wechseln Sie zu „Unterrichtsidee prüfen“. Dort kann optional auch „Lerngruppe / Kontext“ ergänzt werden, zum Beispiel Schulart, Jahrgangsstufe, digitale Routine oder besondere Rahmenbedingungen. Das ist kein Forschungsfilter, sondern hilft, Check und Prompt praxisnäher zuzuschneiden.</p>
       </div>
       <div class="intro-steps" id="introSteps">
         <div class="intro-step"><strong>1. Studien ansehen</strong><span>Nutzen Sie die Themenfelder und Filter, um passende Forschungshinweise zu finden. Es geht um Lernhandlungen, nicht um möglichst viele digitale Werkzeuge.</span></div>
-        <div class="intro-step"><strong>2. Unterrichtsidee prüfen</strong><span>Wenn Sie eine konkrete Idee haben, wechseln Sie zum Planungscheck, wählen das Format aus und bearbeiten die Prüfpunkte.</span></div>
+        <div class="intro-step"><strong>2. Unterrichtsidee prüfen</strong><span>Wenn Sie eine konkrete Idee haben, wechseln Sie zum Planungscheck, ergänzen bei Bedarf Lerngruppe und Kontext, wählen das Format aus und bearbeiten die Prüfpunkte.</span></div>
         <div class="intro-step"><strong>3. Ergebnis nutzen</strong><span>Der Check zeigt offene Punkte, passende Studienhinweise und nächste Schritte. Die Ampel ist eine Reflexionshilfe, keine automatische Bewertung.</span></div>
       </div>
       <div class="intro-examples" id="introExamples">
@@ -435,7 +380,7 @@
         <div class="intro-example"><strong>Beispiel 3: Eine Lernplattform-Sequenz strukturieren</strong><span>Öffnen Sie das Themenfeld „Lernplattformen, Struktur und Selbststeuerung“. Prüfen Sie anschließend im Format „Sequenz / Lernpfad“, ob Ziel, Etappen, Hilfen, Feedback, Fortschritt und Reflexion wirklich sichtbar sind.</span></div>
       </div>
       <div class="intro-actions">
-        <button class="btn" id="introExplainBtn" onclick="showIntroSteps()">Anleitung anzeigen</button>
+        <button class="btn" id="introExplainBtn" onclick="showIntroSteps()">Hilfe anzeigen</button>
         <button class="btn ghost" onclick="closeIntro(true)">Direkt starten</button>
         <button class="btn ghost" id="introFindingsBtn" style="display:none" onclick="closeIntro(true);showTab('findings')">Zu den Studien</button>
         <button class="btn ghost" id="introPlannerBtn" style="display:none" onclick="closeIntro(true);showTab('planner')">Unterrichtsidee prüfen</button>
@@ -497,7 +442,6 @@ async function writeClipboard(text, successMessage){
   }
   toast(successMessage);
 }
-function toggleManual(){const el=document.getElementById("manual-section");if(el){el.classList.toggle("show");}}
 function introSeen(){
   try{return localStorage.getItem("introSeen")==="1";}catch(e){return false;}
 }
@@ -535,6 +479,8 @@ function showIntroSteps(){
 function openIntro(showSteps=false){
   const overlay=document.getElementById("introOverlay");
   if(!overlay)return;
+  const title=document.getElementById("introTitle");
+  if(title)title.textContent=showSteps?"Ausführliche Anleitung":"Kurz Hilfe benötigt?";
   resetIntroQuestion();
   if(showSteps)showIntroSteps();
   overlay.classList.add("show");
@@ -595,7 +541,7 @@ function renderChips(){
     return `<button class="chip ${activeGroup===g?"active":""}" onclick='setGroup(${JSON.stringify(g)})'>${esc(g)} <span style="float:right; opacity:.65">${count}</span></button>`;
   }).join("");
 }
-function setGroup(g){activeGroup=g;showTab("findings");render();}
+function setGroup(g){activeGroup=g;showTab("findings",{scroll:false});render();}
 function resetFilters(){
   activeGroup="Alle";
   document.getElementById("modelFilter").value="";
@@ -712,6 +658,7 @@ function buildCheckPrompt(){
   const format=document.getElementById("format").value;
   const goal=document.getElementById("goal").value.trim();
   const tool=document.getElementById("tool").value.trim();
+  const learnerContext=document.getElementById("learnerContext").value.trim();
   const idea=document.getElementById("idea").value.trim();
   const s=checklistState();
   const a=ampelResult();
@@ -732,7 +679,10 @@ function buildCheckPrompt(){
 Fach / Klasse:
 ${subject||"[bitte ergänzen]"}
 
-Format:
+Lerngruppe / Kontext:
+${learnerContext||"nicht angegeben"}
+
+Format / Umfang:
 ${format}
 
 Lernziel:
@@ -767,6 +717,8 @@ Entwickle daraus eine konkrete, fachlich passende Unterrichtsidee. Schärfe vor 
 Wichtig:
 - Keine bloße Tool-Idee.
 - Der digitale Einsatz muss didaktisch begründet sein.
+- Passe die Unterrichtsidee an die genannte Lerngruppe und den Kontext an.
+- Deute die wissenschaftlichen Befunde nicht schulartspezifisch um, wenn die Studienlage das nicht hergibt.
 - Keine erfundenen Studien, Quellen oder Effektstärken.
 - Kennzeichne Unsicherheiten klar.`;
 }
@@ -777,7 +729,18 @@ function copyCheckPrompt(){
 function toggleSelected(id){if(selected.has(id))selected.delete(id);else selected.add(id);persistSelection();render();}
 function clearSelected(){selected.clear();try{localStorage.removeItem("selectedFindings");}catch(e){}render();toast("Auswahl geleert.")}
 function selectAllFindings(){filteredItems().forEach(item=>selected.add(item.id));persistSelection();render();toast("Alle angezeigten Studienhinweise markiert.")}
-function showTab(tab){["findings","planner","sources"].forEach(t=>{document.getElementById(`${t}-section`).style.display=t===tab?"":"none";const tabButton=document.getElementById(`tab-${t}`);tabButton.classList.toggle("active",t===tab);tabButton.setAttribute("aria-selected",t===tab?"true":"false")});if(tab==="sources")renderSources();if(tab==="planner")renderChecklist();window.scrollTo({top:0,behavior:"smooth"})}
+function showTab(tab,options={}){
+  const shouldScroll=options.scroll!==false;
+  ["findings","planner","sources"].forEach(t=>{
+    document.getElementById(`${t}-section`).style.display=t===tab?"":"none";
+    const tabButton=document.getElementById(`tab-${t}`);
+    tabButton.classList.toggle("active",t===tab);
+    tabButton.setAttribute("aria-selected",t===tab?"true":"false");
+  });
+  if(tab==="sources")renderSources();
+  if(tab==="planner")renderChecklist();
+  if(shouldScroll)window.scrollTo({top:0,behavior:"smooth"});
+}
 function renderChecklist(){
   const format=document.getElementById("format").value||Object.keys(formatChecklists)[0];
   const list=formatChecklists[format]||[];
@@ -807,9 +770,9 @@ function relatedLinksHtml(missingItems){
 }
 
 function selectedLinksHtml(){const sel=items.filter(i=>selected.has(i.id));if(!sel.length)return "";return `<div class="suggestions">`+sel.map(i=>`<button class="mini-btn" onclick="jumpToFinding(${i.id})">Studienhinweis ${i.id} ansehen</button>`).join("")+`</div>`}
-function jumpToFinding(id){showTab("findings");setTimeout(()=>{const el=document.getElementById(`befund-${id}`);if(el){el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.add("highlight");setTimeout(()=>el.classList.remove("highlight"),2200)}},250)}
+function jumpToFinding(id){showTab("findings",{scroll:false});setTimeout(()=>{const el=document.getElementById(`befund-${id}`);if(el){el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.add("highlight");setTimeout(()=>el.classList.remove("highlight"),2200)}},250)}
 function buildCheck(includeRelated=false){
-  const subject=document.getElementById("subject").value.trim(), format=document.getElementById("format").value, goal=document.getElementById("goal").value.trim(), tool=document.getElementById("tool").value.trim(), idea=document.getElementById("idea").value.trim();
+  const subject=document.getElementById("subject").value.trim(), format=document.getElementById("format").value, goal=document.getElementById("goal").value.trim(), tool=document.getElementById("tool").value.trim(), learnerContext=document.getElementById("learnerContext").value.trim(), idea=document.getElementById("idea").value.trim();
   const s=checklistState(), a=ampelResult(), selectedItems=items.filter(i=>selected.has(i.id));
   const selectedText=selectedItems.length?selectedItems.map(i=>`- Studienhinweis ${i.id}: ${i.finding}
   Unterrichtsfolge: ${i.teaching}
@@ -827,6 +790,9 @@ ${a.text}
 
 Fach / Klasse:
 ${subject||"optional nicht angegeben"}
+
+Lerngruppe / Kontext:
+${learnerContext||"nicht angegeben"}
 
 Format / Umfang:
 ${format}
@@ -874,7 +840,7 @@ function downloadMarkdown(){
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");
   a.href=url;
-  a.download="reflexionscheck_lernwirksamer_digitaler_unterricht.md";
+  a.download="reflexionscheck_lernwirksam_unterrichten.md";
   document.body.appendChild(a);
   a.click();
   a.remove();
