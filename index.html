@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lernwirksamer digitaler Unterricht</title>
-  <meta name="description" content="Forschungsbasierte Orientierungstabelle und Planungscheck für lernwirksamen digitalen Unterricht, digitale Lernaufgaben, KI, H5P, Lernplattform, Feedback und Leistungsnachweise." />
+  <title>Lernwirksam unterrichten mit digitalen Medien</title>
+  <meta name="description" content="Forschungsbasierte Orientierungstabelle und Planungscheck für lernwirksame Unterrichtsplanung mit digitalen Medien, KI, H5P, Lernplattform, Feedback, Leistungsnachweisen und analogen Alternativen." />
   <meta name="author" content="MJ" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#7a6d8f" />
-  <meta property="og:title" content="Lernwirksamer digitaler Unterricht" />
-  <meta property="og:description" content="Eine kompakte App für Lehrkräfte zur evidenzinformierten Planung und Reflexion digitaler Unterrichtsideen." />
+  <meta property="og:title" content="Lernwirksam unterrichten mit digitalen Medien" />
+  <meta property="og:description" content="Eine kompakte App für Lehrkräfte zur evidenzinformierten Planung und Reflexion digitaler und analoger Unterrichtsentscheidungen." />
   <meta property="og:type" content="website" />
   <link rel="icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="10" fill="%23f1edf7"/%3E%3Cpath d="M14 46V18h7l11 17 11-17h7v28h-7V30L34 44h-4l-9-14v16h-7z" fill="%235d536e"/%3E%3C/svg%3E' />
   <style>
@@ -298,9 +298,9 @@
   <div class="shell">
     <header class="hero">
       <div class="brand-signature" aria-label="MJ">MJ</div>
-      <div class="eyebrow">Forschungsbasierte Orientierungstabelle</div>
-      <h1>Lernwirksamer digitaler Unterricht</h1>
-      <p>Diese App bündelt zentrale Studien und Forschungsübersichten zu digitalem Unterricht, Tabletklassen, Lernplattformen, H5P, Feedback, KI und alternativen Leistungsnachweisen. Im Mittelpunkt steht: Was zeigen Forschungsergebnisse und was folgt daraus konkret für guten Unterricht?</p>
+      <div class="eyebrow">Forschungshinweise für Unterrichtsentscheidungen</div>
+      <h1>Lernwirksam unterrichten mit digitalen Medien</h1>
+      <p>Diese App bündelt zentrale Studien und Forschungsübersichten zu Unterrichtsqualität, digitalen Medien, Tabletklassen, Lernplattformen, H5P, Feedback, KI und alternativen Leistungsnachweisen. Im Mittelpunkt steht: Was zeigen Forschungsergebnisse und was folgt daraus konkret für guten Unterricht, digital wie analog?</p>
       <p class="hero-brief"><strong>Anleitung:</strong> Erst passende Studienhinweise ansehen, dann bei Bedarf markieren und anschließend eine eigene Unterrichtsidee prüfen. Der Button „Anleitung“ öffnet eine kurze Einführung mit ausführlicher Erklärung und Beispielen.</p>
       <div class="hero-actions">
         <button class="btn secondary" onclick="openIntro(true)">Anleitung</button>
@@ -322,6 +322,7 @@
         <div class="note"><strong>Merksatz:</strong><br />Digitale Unterrichtsentscheidungen sollten nicht vom Tool ausgehen, sondern von der Lernhandlung: Was sollen Schülerinnen und Schüler besser verstehen, abrufen, erklären, prüfen, überarbeiten, reflektieren oder anwenden können?</div>
         <div class="note"><strong>Planungsfunktion:</strong><br />Die Ampel im Planungsbereich ist eine heuristische Reflexionshilfe. Sie ersetzt keine fachliche Prüfung, macht aber fehlende Planungsbausteine sichtbar. Der Hauptzweck bleibt die Informationstabelle.</div>
         <div class="note"><strong>Nutzung:</strong><br />Wählen Sie zuerst einen Weg: Studien ansehen, eine Unterrichtsidee prüfen oder Quellen öffnen. Einzelne Studienhinweise können für den Planungscheck markiert werden.</div>
+        <div class="note"><strong>Umfang:</strong><br />Die App bildet nicht alle Studien, Tools, Methoden oder Modelle zu lernwirksamem Unterricht ab. Sie enthält eine ausgewählte, didaktisch gebündelte Quellenbasis zur Orientierung.</div>
         <div class="note"><strong>Datenschutz / Speicherung:</strong><br />Markierte Studienhinweise werden nur lokal in diesem Browser gespeichert. Es werden keine Eingaben übertragen. Beim Browserwechsel, Löschen der Browserdaten oder anderem Gerät kann die Auswahl verloren gehen.</div>
       </aside>
       <main class="main">
@@ -868,7 +869,7 @@ async function copyCheck(){const text=lastCheckText||document.getElementById("ch
 function downloadMarkdown(){
   const text=lastCheckText||document.getElementById("checkOutputWrap").textContent||"";
   if(!text.trim()){toast("Noch kein Check vorhanden.");return;}
-  const md=`# Reflexionscheck: lernwirksamer digitaler Unterricht\n\n${text}`;
+  const md=`# Reflexionscheck: lernwirksam unterrichten mit digitalen Medien\n\n${text}`;
   const blob=new Blob([md],{type:"text/markdown;charset=utf-8"});
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");
