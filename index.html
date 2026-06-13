@@ -269,6 +269,9 @@
     .intro-dialog{width:min(720px,100%);max-height:min(92vh,760px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--primary);border-radius:8px;box-shadow:0 22px 70px rgba(36,30,45,.22);padding:20px}
     .intro-dialog h2{margin:0 0 8px;font-size:1.35rem}
     .intro-dialog p{margin:0 0 12px;color:var(--muted)}
+    .intro-details{display:none;border:1px solid var(--line);border-radius:7px;background:#fbfaf7;padding:12px;margin:12px 0}
+    .intro-details.show{display:block}
+    .intro-details p:last-child{margin-bottom:0}
     .intro-steps{display:none;grid-template-columns:1fr;gap:10px;margin:14px 0}
     .intro-steps.show{display:grid}
     .intro-step{border-left:3px solid var(--primary);padding:9px 0 9px 12px;background:linear-gradient(90deg,#f6f1fb,transparent)}
@@ -298,9 +301,9 @@
       <div class="eyebrow">Forschungsbasierte Orientierungstabelle</div>
       <h1>Lernwirksamer digitaler Unterricht</h1>
       <p>Diese App bündelt zentrale Studien und Forschungsübersichten zu digitalem Unterricht, Tabletklassen, Lernplattformen, H5P, Feedback, KI und alternativen Leistungsnachweisen. Im Mittelpunkt steht: Was zeigen Forschungsergebnisse und was folgt daraus konkret für guten Unterricht?</p>
-      <p class="hero-brief"><strong>Kurz erklärt:</strong> Erst passende Studienhinweise ansehen, dann bei Bedarf markieren und anschließend eine eigene Unterrichtsidee prüfen. Der Button „Kurz erklärt“ zeigt konkrete Beispiele.</p>
+      <p class="hero-brief"><strong>Anleitung:</strong> Erst passende Studienhinweise ansehen, dann bei Bedarf markieren und anschließend eine eigene Unterrichtsidee prüfen. Der Button „Anleitung“ öffnet eine kurze Einführung mit ausführlicher Erklärung und Beispielen.</p>
       <div class="hero-actions">
-        <button class="btn secondary" onclick="openIntro(true)">Kurz erklärt</button>
+        <button class="btn secondary" onclick="openIntro(true)">Anleitung</button>
         <button class="btn secondary" onclick="toggleManual()">Gebrauchsanweisung</button>
         <button class="btn secondary" onclick="window.print()">Drucken / PDF</button>
       </div>
@@ -412,8 +415,13 @@
   </div>
   <div class="intro-overlay" id="introOverlay" role="dialog" aria-modal="true" aria-labelledby="introTitle" aria-describedby="introText">
     <div class="intro-dialog">
-      <h2 id="introTitle">Kurze Erklärung nötig?</h2>
+      <h2 id="introTitle">Anleitung nötig?</h2>
       <p id="introText">Diese App ist kein Tool-Katalog und kein automatischer Unterrichtsbewerter. Sie hilft dabei, digitale Unterrichtsideen anhand von Studien und Forschungsergebnissen zu planen und zu prüfen.</p>
+      <div class="intro-details" id="introDetails">
+        <p><strong>So ist die App gedacht:</strong> Sie starten entweder bei den Studien oder mit einer eigenen Unterrichtsidee. Die App ersetzt keine Unterrichtsplanung, sondern macht sichtbar, welche Forschungshinweise zu Ihrer Idee passen und welche Planungsbausteine noch geschärft werden sollten.</p>
+        <p>Hilfreich ist die Reihenfolge: erst Lernziel und Lernhandlung klären, dann ein digitales Format auswählen. Die Studienhinweise sind deshalb keine Tool-Empfehlungen, sondern didaktische Prüffragen: Wird etwas erklärt, geübt, abgerufen, überarbeitet, reflektiert oder als Lernprozess sichtbar?</p>
+        <p>Wenn Sie nur schnell starten wollen, öffnen Sie „Studien ansehen“. Wenn Sie bereits eine konkrete Idee haben, wechseln Sie zu „Unterrichtsidee prüfen“. Markierte Studienhinweise können in den Check übernommen werden.</p>
+      </div>
       <div class="intro-steps" id="introSteps">
         <div class="intro-step"><strong>1. Studien ansehen</strong><span>Nutzen Sie die Themenfelder und Filter, um passende Forschungshinweise zu finden. Es geht um Lernhandlungen, nicht um möglichst viele digitale Werkzeuge.</span></div>
         <div class="intro-step"><strong>2. Unterrichtsidee prüfen</strong><span>Wenn Sie eine konkrete Idee haben, wechseln Sie zum Planungscheck, wählen das Format aus und bearbeiten die Prüfpunkte.</span></div>
@@ -426,7 +434,7 @@
         <div class="intro-example"><strong>Beispiel 3: Eine Lernplattform-Sequenz strukturieren</strong><span>Öffnen Sie das Themenfeld „Lernplattformen, Struktur und Selbststeuerung“. Prüfen Sie anschließend im Format „Sequenz / Lernpfad“, ob Ziel, Etappen, Hilfen, Feedback, Fortschritt und Reflexion wirklich sichtbar sind.</span></div>
       </div>
       <div class="intro-actions">
-        <button class="btn" id="introExplainBtn" onclick="showIntroSteps()">Kurz erklären</button>
+        <button class="btn" id="introExplainBtn" onclick="showIntroSteps()">Anleitung anzeigen</button>
         <button class="btn ghost" onclick="closeIntro(true)">Direkt starten</button>
         <button class="btn ghost" id="introFindingsBtn" style="display:none" onclick="closeIntro(true);showTab('findings')">Zu den Studien</button>
         <button class="btn ghost" id="introPlannerBtn" style="display:none" onclick="closeIntro(true);showTab('planner')">Unterrichtsidee prüfen</button>
@@ -496,11 +504,13 @@ function rememberIntro(){
   try{localStorage.setItem("introSeen","1");}catch(e){}
 }
 function resetIntroQuestion(){
+  const details=document.getElementById("introDetails");
   const steps=document.getElementById("introSteps");
   const examples=document.getElementById("introExamples");
   const explain=document.getElementById("introExplainBtn");
   const findings=document.getElementById("introFindingsBtn");
   const planner=document.getElementById("introPlannerBtn");
+  if(details)details.classList.remove("show");
   if(steps)steps.classList.remove("show");
   if(examples)examples.classList.remove("show");
   if(explain)explain.style.display="";
@@ -508,11 +518,13 @@ function resetIntroQuestion(){
   if(planner)planner.style.display="none";
 }
 function showIntroSteps(){
+  const details=document.getElementById("introDetails");
   const steps=document.getElementById("introSteps");
   const examples=document.getElementById("introExamples");
   const explain=document.getElementById("introExplainBtn");
   const findings=document.getElementById("introFindingsBtn");
   const planner=document.getElementById("introPlannerBtn");
+  if(details)details.classList.add("show");
   if(steps)steps.classList.add("show");
   if(examples)examples.classList.add("show");
   if(explain)explain.style.display="none";
